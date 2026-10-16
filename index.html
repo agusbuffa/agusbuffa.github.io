@@ -182,18 +182,31 @@
     </article>
 
     <article class="project" id="icing">
-      <div class="ph">Figure: ice shape on airfoil</div>
+      <figure class="photo">
+        <img src="assets/img/ice-bead-mesh.png" alt="Computational mesh around a small semicircular bead on the airfoil surface">
+        <figcaption>Mesh around a single frozen bead (semicircular ridge) on the airfoil surface.</figcaption>
+      </figure>
       <div class="body">
-        <p class="meta">TU Braunschweig · 2025 to 2026</p>
-        <h3>Ice formation on airfoils</h3>
+        <p class="meta">TU Braunschweig, Institute of Fluid Mechanics · Research report, July 2026</p>
+        <h3>Impingement limit of small droplets on rough surfaces</h3>
         <dl>
           <dt>Problem</dt>
-          <dd class="todo">[What were you studying about airfoil icing?]</dd>
+          <dd>In-flight icing starts with supercooled droplets freezing into small beads that later grow into ice feathers. Icing codes treat this roughness only as a turbulence boundary condition. Does a single bead, placed at the impingement limit of the droplet size that formed it, change the water catch only locally, or does it shift the impingement limits themselves?</dd>
           <dt>What I did</dt>
-          <dd class="todo">[Tools and method.]</dd>
+          <dd><ul>
+            <li>Computed the flow around a NACA 0012 airfoil in OpenFOAM (RANS, k-ω SST), after a grid and domain convergence study.</li>
+            <li>Integrated droplet trajectories in a separate post-processing step (Lagrangian equation of motion, adaptive Runge-Kutta 4(5)) and derived the collection efficiency.</li>
+            <li>Validated the workflow against the experimental collection-efficiency data of Papadakis et al. and the NASA LEWICE code.</li>
+            <li>Modelled beads of 40, 60 and 80 µm as semicircular ridges at the corresponding impingement limits and recomputed the collection efficiency for a range of droplet diameters.</li>
+          </ul></dd>
           <dt>Result</dt>
-          <dd class="todo">[Outcome.]</dd>
+          <dd>A bead produces a sharp, local peak in collection efficiency at its own position, up to six times the smooth-surface value, while the distribution and the impingement limits elsewhere stay indistinguishable from the smooth airfoil. Whether a droplet hits the bead is set by the droplet's own impingement limit (a leading-edge Stokes number), and every icing-relevant droplet is too inertial to be deflected around the bead. So the water-catch effect of early roughness can be predicted from smooth-wall data alone, and the result suggests why roughness grows preferentially near the impingement limits, where feathers start. The model is 2D with a single bead and an all-stick impact assumption, which the report discusses as limitations.</dd>
         </dl>
+        <figure class="wide">
+          <img src="assets/img/ice-validation.png" alt="Collection efficiency along the airfoil surface for 20, 52 and 111 micrometre droplets, compared with Papadakis experimental data and LEWICE">
+          <figcaption>Validation of the droplet code (blue) against experimental data (Papadakis, black) and LEWICE (red) for 20, 52 and 111 µm droplets.</figcaption>
+        </figure>
+        <div class="tags"><span>OpenFOAM</span><span>RANS</span><span>Lagrangian particles</span><span>Icing</span></div>
       </div>
     </article>
 
