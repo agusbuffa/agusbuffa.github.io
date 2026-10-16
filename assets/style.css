@@ -139,3 +139,6 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2r
 .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; display: block; }
 .gallery figcaption { font-size: .72rem; color: var(--muted); margin-top: .3rem; }
 @media (max-width: 760px) { .gallery { grid-template-columns: 1fr; } }
+.wide video { width: 100%; height: auto; border-radius: 8px; background: #000; display: block; }
+.wide figcaption { font-size: .75rem; color: var(--muted); margin-top: .4rem; }
+.body > .wide { margin-top: 1.2rem; }
