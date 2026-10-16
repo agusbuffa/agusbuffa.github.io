@@ -98,23 +98,30 @@
     </article>
 
     <article class="project" id="llt">
-      <div class="ph">Figure: optimal spanwise deflection distribution</div>
+      <figure class="photo">
+        <img src="assets/img/llt-deflection-highlift.png" alt="Optimised spanwise trailing-edge deflection of a UAV wing at high lift, shown as a colour map on the wing">
+        <figcaption>Optimised trailing-edge deflection along the span for the high-lift case (C<sub>L</sub> = 1.2).</figcaption>
+      </figure>
       <div class="body">
-        <p class="meta">Thesis, UTN + DLR · 2026</p>
+        <p class="meta">UTN Haedo + TU Braunschweig · Thesis work · 2025 to 2026</p>
         <h3>Lifting-line theory for morphing-wing drag optimisation</h3>
         <dl>
           <dt>Problem</dt>
-          <dd>Find the spanwise deflection distribution of an adaptive wing that minimises drag, quickly enough to explore many configurations.</dd>
+          <dd>Morphing wings need design tools that are cheap enough for early design stages. Full 3D CFD or aero-structural coupling is too expensive to explore many spanwise camber distributions.</dd>
           <dt>What I did</dt>
           <dd><ul>
-            <li>Developed an LLT-based optimisation method with linear and nonlinear aerodynamic approaches.</li>
-            <li>Included parasitic drag, trimmed flight and different wing and actuator configurations.</li>
-            <li>Built and evaluated adaptive-airfoil databases with XFOIL, and compared LLT against VLM.</li>
+            <li>Coupled 2D CFD sectional data (lift, drag and moment of the baseline and morphed airfoils) with a classical lifting-line solver and a parametric trailing-edge morphing model.</li>
+            <li>Formulated a constrained drag minimisation at constant lift, with the angle of attack and the deflection at 50 spanwise stations as design variables, solved with SLSQP within the mechanism's deformation limits.</li>
+            <li>Compared the optimised wing against the baseline for lift coefficients from 0.3 to 1.6, in cruise and high-lift conditions.</li>
           </ul></dd>
           <dt>Result</dt>
-          <dd>Preprint <a href="https://zenodo.org/records/21998900">"Lifting Line Theory for Morphing Wing Applications"</a>, submitted to CEAS Aeronautical Journal (March 2026). <span class="todo">[Add one headline finding and a link to the code if it is public.]</span></dd>
+          <dd>Consistent drag reduction, much larger off-design than in cruise: <strong>+4.9%</strong> in C<sub>L</sub>/C<sub>D</sub> at C<sub>L</sub> = 0.4 and <strong>+48.9%</strong> at C<sub>L</sub> = 1.2. The optimised wing also shows a smoother spanwise drag distribution and a steeper lift gradient toward the tip, which favours root-first stall. The CFD underpredicts absolute drag (about 30%), so the results are used comparatively. Published as the preprint <a href="https://zenodo.org/records/21998900">"Lifting Line Theory for Morphing Wing Applications"</a> (submitted to CEAS Aeronautical Journal); code available on request.</dd>
         </dl>
-        <div class="tags"><span>Python</span><span>LLT</span><span>XFOIL</span><span>Optimisation</span></div>
+        <figure class="wide">
+          <img src="assets/img/llt-performance.png" alt="Aerodynamic efficiency CL/CD and CL^1.5/CD versus CL for the baseline and the optimised wing in high-lift conditions">
+          <figcaption>Aerodynamic efficiency of the baseline and optimised wing in high-lift conditions.</figcaption>
+        </figure>
+        <div class="tags"><span>Python</span><span>LLT</span><span>SLSQP</span><span>CFD</span><span>Optimisation</span></div>
       </div>
     </article>
   </section>

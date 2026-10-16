@@ -127,3 +127,7 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2r
   .project { grid-template-columns: 1fr; }
   .topbar nav { display: none; }
 }
+
+.wide { margin: 1.2rem 0 0; }
+.wide img { width: 100%; height: auto; aspect-ratio: auto; border: 1px solid var(--line); background: #fff; }
+.wide figcaption { font-size: .75rem; color: var(--muted); margin-top: .4rem; }
