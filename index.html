@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agustín Buffa · Aerospace Engineer</title>
+  <meta name="description" content="Portfolio of Agustín Buffa, aerospace engineer: flight physics and simulation, CFD and wind tunnel testing, space systems.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!--
+  HOW TO EDIT
+  - Each section has an id (#flight-physics, #cfd, #space, #teaching, #personal).
+    Send links like  https://<user>.github.io/#flight-physics  in each application.
+  - Each project is an <article class="project">. Copy one to add a new project.
+  - Photos go in assets/img/. Replace the <div class="ph"> placeholder with
+    <img src="assets/img/your-photo.jpg" alt="short description">.
+  - Anything marked class="todo" is a placeholder: fill it in or delete it.
+-->
+
+<header class="topbar">
+  <a class="brand" href="#top">Agustín Buffa</a>
+  <nav>
+    <a href="#flight-physics">Flight Physics</a>
+    <a href="#cfd">CFD &amp; Wind Tunnel</a>
+    <a href="#space">Space</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#personal">Personal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <img class="avatar" src="assets/img/profile.jpg" alt="Portrait of Agustín Buffa">
+    <div>
+      <p class="eyebrow">Aerospace Engineer · EU citizen · open to relocation</p>
+      <h1>Agustín Buffa</h1>
+      <p class="lead">
+        Aeronautical engineer (UTN, GPA 9.1/10, degree expected December 2026) working on
+        adaptive-wing aerodynamics, aerodynamic modelling for flight simulation and small
+        satellite systems. DAAD scholar: academic exchange at TU Braunschweig and internship
+        at DLR's Institute of Flight Systems.
+      </p>
+      <p class="lead">
+        Aiming at <strong>flight test engineering</strong>: turning models, simulation and
+        measurements into decisions about how an aircraft actually flies.
+      </p>
+      <div class="chips">
+        <span>Python</span><span>MATLAB</span><span>AVL</span><span>XFOIL / XFLR5</span>
+        <span>VSPAERO</span><span>OpenFOAM</span><span>FMI / FMU</span><span>SolidWorks</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="assets/Agustin_Buffa_CV.pdf">Download CV</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/agustin-buffa">LinkedIn</a>
+        <a class="btn ghost" href="mailto:agusbuffa.ab@gmail.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FLIGHT PHYSICS & SIMULATION ============ -->
+  <section id="flight-physics" class="area">
+    <div class="area-head">
+      <span class="num">01</span>
+      <h2>Flight Physics &amp; Simulation</h2>
+      <p>Aerodynamic models that are fast enough to fly in a simulator and accurate enough to trust.</p>
+    </div>
+
+    <article class="project" id="morphair">
+      <div class="ph">Photo: PROTEUS UAV / simulation setup</div>
+      <div class="body">
+        <p class="meta">DLR, Institute of Flight Systems · Braunschweig · Mar to Jul 2026</p>
+        <h3>morphAIR: aerodynamic modelling of an adaptive-wing UAV</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Represent the aerodynamics of a fixed-wing UAV with adaptive (morphing) wings
+            (PROTEUS platform) inside an FMU-based flight simulation environment.</dd>
+          <dt>What I did</dt>
+          <dd><ul>
+            <li>Compared lookup tables, VLM, lifting-line theory and surrogate models as ways to represent the adaptive wing.</li>
+            <li>Evaluated AVL, VSPAERO and XFLR5 on runtime, convergence and data quality; benchmarked VLM for real-time use.</li>
+            <li>Conceived an aerodynamic FMU computing forces and moments from the wing's adaptive geometry, a reduced-order model of the configuration, and a lookup-table structure for the coefficients.</li>
+            <li>Analysed CFD data for correcting and validating the models, and observed flight tests.</li>
+          </ul></dd>
+          <dt>Result</dt>
+          <dd class="todo">[What came out of it: a recommendation, a delivered model, a figure you can show. Only what you can share publicly.]</dd>
+        </dl>
+        <div class="tags"><span>AVL</span><span>VSPAERO</span><span>XFLR5</span><span>PyFDM</span><span>FMI/FMU</span></div>
+      </div>
+    </article>
+
+    <article class="project" id="llt">
+      <div class="ph">Figure: optimal spanwise deflection distribution</div>
+      <div class="body">
+        <p class="meta">Thesis, UTN + DLR · 2026</p>
+        <h3>Lifting-line theory for morphing-wing drag optimisation</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Find the spanwise deflection distribution of an adaptive wing that minimises drag, quickly enough to explore many configurations.</dd>
+          <dt>What I did</dt>
+          <dd><ul>
+            <li>Developed an LLT-based optimisation method with linear and nonlinear aerodynamic approaches.</li>
+            <li>Included parasitic drag, trimmed flight and different wing and actuator configurations.</li>
+            <li>Built and evaluated adaptive-airfoil databases with XFOIL, and compared LLT against VLM.</li>
+          </ul></dd>
+          <dt>Result</dt>
+          <dd>Preprint <a href="https://zenodo.org/records/21998900">"Lifting Line Theory for Morphing Wing Applications"</a>, submitted to CEAS Aeronautical Journal (March 2026). <span class="todo">[Add one headline finding and a link to the code if it is public.]</span></dd>
+        </dl>
+        <div class="tags"><span>Python</span><span>LLT</span><span>XFOIL</span><span>Optimisation</span></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ CFD & WIND TUNNEL ============ -->
+  <section id="cfd" class="area">
+    <div class="area-head">
+      <span class="num">02</span>
+      <h2>CFD &amp; Wind Tunnel</h2>
+      <p>Simulation and experiment side by side.</p>
+    </div>
+
+    <article class="project" id="morphing-cfd">
+      <div class="ph">Photo: oilflow / smoke visualisation</div>
+      <div class="body">
+        <p class="meta">Laboratory for Aerodynamics &amp; Fluid Mechanics, UTN Haedo · 2023 to 2026</p>
+        <h3>CFD and wind-tunnel study of deformable airfoils</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd class="todo">[What question about the morphing airfoils were you trying to answer?]</dd>
+          <dt>What I did</dt>
+          <dd><ul>
+            <li>CFD of morphing airfoils with RANS models (k-ω SST, Spalart-Allmaras) and the γ-Reθ transition model.</li>
+            <li>Qualitative wind-tunnel tests with oilflow and smoke visualisation.</li>
+            <li>Maintained the Hele-Shaw cell experimental equipment.</li>
+          </ul></dd>
+          <dt>Result</dt>
+          <dd class="todo">[One finding, plus a CFD contour next to the oilflow photo if you have both.]</dd>
+        </dl>
+        <div class="tags"><span>OpenFOAM</span><span>ANSA</span><span>k-ω SST</span><span>γ-Reθ</span><span>Wind tunnel</span></div>
+      </div>
+    </article>
+
+    <article class="project" id="icing">
+      <div class="ph">Figure: ice shape on airfoil</div>
+      <div class="body">
+        <p class="meta">TU Braunschweig · 2025 to 2026</p>
+        <h3>Ice formation on airfoils</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd class="todo">[What were you studying about airfoil icing?]</dd>
+          <dt>What I did</dt>
+          <dd class="todo">[Tools and method.]</dd>
+          <dt>Result</dt>
+          <dd class="todo">[Outcome.]</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="project" id="savonius">
+      <div class="ph">Photo: scale Savonius turbine</div>
+      <div class="body">
+        <p class="meta">AeroMat Group, CNEA · Feb 2023</p>
+        <h3>Low-fidelity aerodynamics of a scale Savonius wind turbine</h3>
+        <dl>
+          <dt>What I did</dt>
+          <dd>Low-fidelity aerodynamic study of a scale Savonius wind turbine. <span class="todo">[Method and result.]</span></dd>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ SPACE SYSTEMS ============ -->
+  <section id="space" class="area">
+    <div class="area-head">
+      <span class="num">03</span>
+      <h2>Space Systems</h2>
+      <p>Hardware that has to work the first time.</p>
+    </div>
+
+    <article class="project" id="cubesat-release">
+      <div class="ph">Photo: melting-wire release mechanism</div>
+      <div class="body">
+        <p class="meta">Aerospace Technology Group, UTN Haedo · 2022 to 2023</p>
+        <h3>Appendage release mechanism for a 3U CubeSat</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Hold and then release deployable appendages of a 3U CubeSat on command.</dd>
+          <dt>What I did</dt>
+          <dd>Designed and built a melting-wire hold, restrain and release mechanism. Also carried out the state of the art and preliminary design of the 3U ADCS, and a review of Hall-effect electric propulsion.</dd>
+          <dt>Result</dt>
+          <dd>Presented at the 2nd IAA Latin American Conference on Space and Society, Salta (Aug 2024). <span class="todo">[Test outcome, e.g. did it release reliably?]</span></dd>
+        </dl>
+        <div class="tags"><span>SolidWorks</span><span>3D printing</span><span>Mechanisms</span></div>
+      </div>
+    </article>
+
+    <article class="project" id="cansat">
+      <div class="ph">Photo: environmental test devices</div>
+      <div class="body">
+        <p class="meta">CONAE CanSat 2022 · UTN Haedo</p>
+        <h3>Environmental test devices for suborbital picosatellites</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>Test CanSat payloads against the environmental requirements of the competition, following American Astronautical Society guidelines.</dd>
+          <dt>What I did</dt>
+          <dd>Designed and built the environmental test devices. <span class="todo">[Which tests: vibration, drop, thermal?]</span></dd>
+          <dt>Result</dt>
+          <dd>Presented at the Congreso Argentino de Tecnología Espacial, Mendoza (Apr 2023).</dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="project" id="lia">
+      <div class="ph">Diagram: piping (only if shareable)</div>
+      <div class="body">
+        <p class="meta">LIA Aerospace · Buenos Aires · Sep 2024 to Mar 2025</p>
+        <h3>Oxidizer production system: documentation and automation</h3>
+        <dl>
+          <dt>Problem</dt>
+          <dd>The oxidizer production system had no documentation, and one manual process carried a high operational load.</dd>
+          <dt>What I did</dt>
+          <dd>Surveyed the system, drew the piping diagrams from how it operated, and proposed automating the manual process.</dd>
+          <dt>Result</dt>
+          <dd class="todo">[Was the proposal adopted?]</dd>
+        </dl>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TEACHING & COMMUNITY ============ -->
+  <section id="teaching" class="area">
+    <div class="area-head">
+      <span class="num">04</span>
+      <h2>Teaching &amp; Community</h2>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <p class="meta">UTN Haedo · 2024 to present</p>
+        <h3>Teaching Assistant, Fluid Mechanics</h3>
+        <p>Explain and solve exercises; explain and grade head-loss laboratory reports.</p>
+      </article>
+      <article class="card">
+        <p class="meta">UTN Haedo · 2025 to present</p>
+        <h3>Student Council, Aeronautics Department</h3>
+        <p>Handle student requests and promote activities with external institutions such as the Embassy of Sweden and the Fulbright Commission.</p>
+      </article>
+      <article class="card">
+        <p class="meta">2025 to 2026</p>
+        <h3>DAAD KOSPIE Scholarship</h3>
+        <p>Selected among 150 applicants; funded a semester at TU Braunschweig and a semester at DLR.</p>
+      </article>
+      <article class="card">
+        <p class="meta">Languages</p>
+        <h3>Five languages</h3>
+        <p>Spanish (native), English (C1), French (B2), German (B2), Italian (A1).</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PERSONAL ============ -->
+  <section id="personal" class="area">
+    <div class="area-head">
+      <span class="num">05</span>
+      <h2>Personal</h2>
+      <p>What I do when I am not at work.</p>
+    </div>
+    <div class="grid2">
+      <article class="card">
+        <div class="ph small">Photo</div>
+        <h3>Flight simulation</h3>
+        <p class="todo">[Which simulators and aircraft, what you practise.]</p>
+      </article>
+      <article class="card">
+        <div class="ph small">Photo</div>
+        <h3 class="todo">[Interest 2]</h3>
+        <p class="todo">[A sentence or two.]</p>
+      </article>
+      <article class="card">
+        <div class="ph small">Photo</div>
+        <h3 class="todo">[Interest 3]</h3>
+        <p class="todo">[A sentence or two.]</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PUBLICATIONS ============ -->
+  <section id="publications" class="area">
+    <div class="area-head">
+      <span class="num">06</span>
+      <h2>Publications</h2>
+    </div>
+    <ol class="pubs">
+      <li><strong>Lifting Line Theory for Morphing Wing Applications.</strong> A. Buffa, P. A. Carón, P. N. Zitelli. Preprint, submitted to CEAS Aeronautical Journal, 2026. <a href="https://zenodo.org/records/21998900">Zenodo</a></li>
+      <li><strong>Design and characterization of an appendage release system for a CubeSat 3U.</strong> A. Buffa, S. Castro, J. I. Ogdon, F. Costalonga, J. Goncalves, P. M. González. 2nd IAA Latin American Conference on Space and Society, Salta, 2024.</li>
+      <li><strong>Desarrollo de dispositivos de ensayos ambientales para pico satélites suborbitales.</strong> A. Buffa, L. Zabala, P. M. González. Congreso Argentino de Tecnología Espacial, Mendoza, 2023.</li>
+    </ol>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="area contact">
+    <h2>Contact</h2>
+    <p>Italian and Argentine citizen: no work permit needed in the EU. Open to relocation.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:agusbuffa.ab@gmail.com">agusbuffa.ab@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/agustin-buffa">LinkedIn</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 Agustín Buffa</footer>
+</body>
+</html>
