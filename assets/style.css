@@ -128,6 +128,8 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2r
   .topbar nav { display: none; }
 }
 
-.wide { margin: 1.2rem 0 0; }
-.wide img { width: 100%; height: auto; aspect-ratio: auto; border: 1px solid var(--line); background: #fff; }
-.wide figcaption { font-size: .75rem; color: var(--muted); margin-top: .4rem; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin-top: 1.2rem; }
+.wide { margin: 0; }
+.wide img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border: 1px solid var(--line); background: #fff; border-radius: 8px; }
+.figcap { font-size: .75rem; color: var(--muted); margin: .4rem 0 0; }
+@media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
