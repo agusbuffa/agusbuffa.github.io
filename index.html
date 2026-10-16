@@ -276,18 +276,37 @@
     </article>
 
     <article class="project" id="cansat">
-      <div class="ph">Photo: environmental test devices</div>
+      <figure class="photo">
+        <img src="assets/img/cansat-launch.jpg" alt="Rocket carrying a CanSat on its launch rail during the national competition" loading="lazy">
+        <figcaption>Launch at the national CanSat competition</figcaption>
+      </figure>
       <div class="body">
-        <p class="meta">CONAE CanSat 2022 · UTN Haedo</p>
-        <h3>Environmental test devices for suborbital picosatellites</h3>
+        <p class="meta">Aerospace Technology Group (GTA), UTN Haedo · CanSat competition (CONAE, MinCyT) · 2022 to 2023</p>
+        <h3>Environmental test devices for CanSat picosatellites</h3>
+        <div class="tags"><span>Environmental testing</span><span>Arduino</span><span>3D printing</span><span>Accelerometers</span></div>
         <dl>
           <dt>Problem</dt>
-          <dd>Test CanSat payloads against the environmental requirements of the competition, following American Astronautical Society guidelines.</dd>
+          <dd>In the first national payload competition, student teams had to test their can-sized CanSats against drop, thermal-vacuum and vibration tests before flight. The group was asked to build the devices to run those tests.</dd>
           <dt>What I did</dt>
-          <dd>Designed and built the environmental test devices. <span class="todo">[Which tests: vibration, drop, thermal?]</span></dd>
+          <dd>
+            <ul>
+              <li>Built, as part of the GTA team, three low-cost test devices following the NASA-based guidelines, with the aluminium, MDF and 3D-printed (PLA, PETG) parts made in-house.</li>
+              <li><strong>Drop test:</strong> an adjustable-height aluminium column with a servo-driven release controlled by an Arduino.</li>
+              <li><strong>Thermal vacuum:</strong> a sealed chamber with a vacuum pump (down to about 0.8 bar), a Peltier cell for cooling, and a barometer and thermometer.</li>
+              <li><strong>Vibration:</strong> an orbital sander on a voltage regulator to set the frequency, with two accelerometers (base and payload) read through an Arduino.</li>
+              <li>Ran a dry run with a dummy CanSat in the lab, then tested the five finalist teams' CanSats at the competition. I presented the work at the Argentine Congress of Space Technology (CATE, April 2023).</li>
+            </ul>
+          </dd>
           <dt>Result</dt>
-          <dd>Presented at the Congreso Argentino de Tecnología Espacial, Mendoza (Apr 2023).</dd>
+          <dd>The devices worked as expected for the five finalist teams: vibration runs of 4 to 10 g for 3 s in series of five, and one thermal-vacuum run per team. Lab tests showed the drop was too hard on the stiff base, so we used the lowest height (0.9 m); at the competition a fault in the release electronics forced us to release the satellites by hand.</dd>
+          <dt>Next</dt>
+          <dd>Better enclosures and better cooling for the thermal-vacuum device.</dd>
         </dl>
+      </div>
+      <div class="gallery" style="grid-column:1/-1;margin-top:0">
+        <figure><img src="assets/img/cansat-drop.jpg" alt="CAD of the drop-test column with an adjustable release arm" loading="lazy"><figcaption>Drop test device (CAD)</figcaption></figure>
+        <figure><img src="assets/img/cansat-vacuum.jpg" alt="Thermal-vacuum chamber with a CanSat inside and its control box" loading="lazy"><figcaption>Thermal-vacuum chamber</figcaption></figure>
+        <figure><img src="assets/img/cansat-shaker.jpg" alt="Vibration device with a CanSat, control box and laptop reading the accelerometers" loading="lazy"><figcaption>Vibration device and live accelerometer data</figcaption></figure>
       </div>
     </article>
 
