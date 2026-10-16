@@ -73,25 +73,24 @@
     </div>
 
     <article class="project" id="morphair">
-      <div class="ph">Photo: PROTEUS UAV / simulation setup</div>
+      <div class="ph">Photo: PROTEUS (to be added)</div>
       <div class="body">
-        <p class="meta">DLR, Institute of Flight Systems · Braunschweig · Mar to Jul 2026</p>
-        <h3>morphAIR: aerodynamic modelling of an adaptive-wing UAV</h3>
+        <p class="meta">DLR, Institute of Flight Systems · morphAIR group · Braunschweig · Mar to Jul 2026</p>
+        <h3>Reduced-order aerodynamic model of the PROTEUS morphing wing</h3>
         <dl>
           <dt>Problem</dt>
-          <dd>Represent the aerodynamics of a fixed-wing UAV with adaptive (morphing) wings
-            (PROTEUS platform) inside an FMU-based flight simulation environment.</dd>
+          <dd>PROTEUS is a jet-powered unmanned research aircraft whose trailing edge is morphed by ten actuators per half-wing. The first aerodynamic model used a vortex-lattice method and a genetic algorithm, which is too costly for real-time flight simulation or reinforcement-learning training.</dd>
           <dt>What I did</dt>
           <dd><ul>
-            <li>Compared lookup tables, VLM, lifting-line theory and surrogate models as ways to represent the adaptive wing.</li>
-            <li>Evaluated AVL, VSPAERO and XFLR5 on runtime, convergence and data quality; benchmarked VLM for real-time use.</li>
-            <li>Conceived an aerodynamic FMU computing forces and moments from the wing's adaptive geometry, a reduced-order model of the configuration, and a lookup-table structure for the coefficients.</li>
-            <li>Analysed CFD data for correcting and validating the models, and observed flight tests.</li>
+            <li>Owned the aerodynamics block of the team's simulation chain; other team members handled the other blocks and the integration of all of them.</li>
+            <li>Developed a multi-fidelity methodology: a low-fidelity model with a gradient-based optimizer finds minimum-drag morphing configurations across the flight envelope, including manoeuvres with a prescribed rolling moment.</li>
+            <li>Re-analysed those geometries with a higher-fidelity model of the complete aircraft and condensed them into a lookup-table model, with local actuator effects recovered through superposed increments.</li>
+            <li>Compared lookup tables, VLM, lifting-line theory and surrogate models; evaluated AVL, VSPAERO and XFLR5 for the FMU-based simulation environment (PyFDM).</li>
           </ul></dd>
           <dt>Result</dt>
-          <dd class="todo">[What came out of it: a recommendation, a delivered model, a figure you can show. Only what you can share publicly.]</dd>
+          <dd>Delivered the model and a report on the proposed tool. In the low-fidelity model the optimal configurations reduce drag by 1.5% to 3.2% relative to the undeformed wing. The lookup table reproduces the vortex-lattice reference exactly for the reference geometries and stays within 12% under combined inputs, where superposition neglects cross-coupling. Written up as a paper with L. Kracke (DLR) <span class="todo">[status: submitted / in preparation? Add link only if public.]</span></dd>
         </dl>
-        <div class="tags"><span>AVL</span><span>VSPAERO</span><span>XFLR5</span><span>PyFDM</span><span>FMI/FMU</span></div>
+        <div class="tags"><span>AVL</span><span>VSPAERO</span><span>XFLR5</span><span>PyFDM</span><span>FMI/FMU</span><span>Optimisation</span></div>
       </div>
     </article>
 
