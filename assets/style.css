@@ -133,3 +133,9 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2r
 .wide img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border: 1px solid var(--line); background: #fff; border-radius: 8px; }
 .figcap { font-size: .75rem; color: var(--muted); margin: .4rem 0 0; }
 @media (max-width: 760px) { .pair { grid-template-columns: 1fr; } }
+
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; margin-top: 1.2rem; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; display: block; }
+.gallery figcaption { font-size: .72rem; color: var(--muted); margin-top: .3rem; }
+@media (max-width: 760px) { .gallery { grid-template-columns: 1fr; } }
